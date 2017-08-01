@@ -1,0 +1,49 @@
+{{ set(this, 'title', 'Search - ' ~ search) }}
+
+{{this.registerJs("SearchController.listing();")}}
+{% set network = _Network.getNetworkData() %}
+{% set limit = 20 %}
+{% set articles = _Search.searchArticles({'limit': limit, 'offset': 0, 'search': search}) %}
+{% set homeUrl = network.networkLogoLinkUrl %}
+{% set articles = {} %} <!--  delete this line -->
+<div class="search__form-big">
+    <form action="/search" method="get">
+        <input type="text" class="header__search-text" placeholder="Search" name="s" value="{{ search }}">
+        <button class="header__search-btn"></button>
+    </form>
+</div>
+<div class="search__heading">
+    {{ articles|length }} Search result{% if articles|length > 1 %}s{% endif %}
+</div> 
+{% if articles|length > 0 %}
+    <div class="search search__wrapper ajaxArticles" data-offset="{{limit}}">    
+        {% for article in articles %}
+            {{this.render('partials/_single-article.twig', {article: article, 'position': 1, containerClass: 'col-quarter'}) | raw}}
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="search__wrapper">
+        <div class="container">
+            <div class="error-wrapper text-center">
+                <div class="error-message">
+                    <div class="error-icon">
+                        <img src="{{network.templatePath}}/static/images/icons/nofound-error.svg" alt="image" />
+                    </div>
+                    <div class="error-heading">
+                        404
+                    </div>
+                    <div class="content-section">
+                        <span>Sorry,</span> we couldnt find what you were looking for...
+                    </div>
+                    <a href="{{homeUrl}}" class="button home-button">Back to Homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+<br/><br/>
+<div class="row text-center">
+    {% if articles|length >= limit %}
+        <a href="javascript:void(0)" class="button loadMoreArticles button__profile-follow"><i class="fa fa-arrow-down"></i>Load More</a>
+    {% endif %}
+</div>
