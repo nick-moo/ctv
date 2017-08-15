@@ -7,8 +7,11 @@
 {% set limit = 10 %}
 {% set articlesArr = _Blog.getBlogFeed({'limit': limit, 'offset': 0}) %}
 {% set articles = articlesArr.articles %}
+
+{% set blog = _Blog.getAll({'keyword':blogInfo.title}) %}
+
 <div class="channel ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
-    <div class="col-half">
+    <div class="col-full">
         <article class="card--channel">
             <div class="card card__no-image">
                 <div class="card__overlay">
@@ -40,48 +43,11 @@
             </div>
         </article>
     </div>
-
-    {% if articles[0] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[0], 'position': 1, containerClass: 'col-half'}) | raw}}
-    {% endif %}
-
-
-    {% if articles[1] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[1], 'position': 2, containerClass: 'col-third'}) | raw}}
-    {% endif %}
-
-    {% if articles[2] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[2], 'position': 3, containerClass: 'col-third'}) | raw}}
-    {% endif %}
-
-    {% if articles[3] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[3], 'position': 4, containerClass: 'col-third'}) | raw}}
-    {% endif %}
-
-    {% if articles[4] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[4], 'position': 5, containerClass: 'col-half'}) | raw}}
-    {% endif %}
-
-    {% if articles[5] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[5], 'position': 6, containerClass: 'col-half'}) | raw}}
-    {% endif %}
-
-    {% if articles[6] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[6], 'position': 7, containerClass: 'col-quarter'}) | raw}}
-    {% endif %}
-
-    {% if articles[7] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[7], 'position': 8, containerClass: 'col-quarter'}) | raw}}
-    {% endif %}
-
-    {% if articles[8] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[8], 'position': 9, containerClass: 'col-quarter'}) | raw}}
-    {% endif %}
-
-    {% if articles[9] is defined %}
-        {{this.render('partials/_single-article.twig', {article: articles[9], 'position': 10, containerClass: 'col-quarter'}) | raw}}
-    {% endif %}
-
+    
+    {% for i in 0..blog|length %}
+       {{this.render('partials/_single-blog.twig', {blog: blog[i], 'position': i, containerClass: 'col-half'}) | raw}}
+    {% endfor %}
+    
     {% set noDataCls = 'hide' %}
     {% if articles|length == 0 %}
         {% set noDataCls = '' %}
