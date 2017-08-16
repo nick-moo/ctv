@@ -1,0 +1,42 @@
+{
+    "module" : {
+        "event" : {
+           "enabled" : true
+        },
+        "styling" : {
+            "enabled" : true
+        },
+        "page" : {
+            "contentEditor" : {
+                "enabled" : true
+            }
+        },
+        "blog": {
+            "extendedAttributes": [
+                {
+                    "label": "Icons",
+                    "type": "checkbox",
+                    "name": "icons",
+                    "options": {
+                        "tom_cruise": "Tom Cruise",
+                        "liz_hurley": "Liz Hurley"
+                    }
+                },
+                {
+                    "label": "Icons",
+                    "type": "radio",
+                    "name": "iconsradio",
+                    "options": {
+                        "hindi": "Hindi",
+                        "english": "English"
+                    }
+                },
+                {
+                    "name": "Opening Hours",
+                    "label": "hours",
+                    "type": "inputbox"
+                }
+            ]
+        }
+    }
+}
