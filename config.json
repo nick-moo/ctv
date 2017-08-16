@@ -14,26 +14,20 @@
         "blog": {
             "extendedAttributes": [
                 {
-                    "label": "Icons",
+                    "label": "Features",
                     "type": "checkbox",
-                    "name": "icons",
+                    "name": "features",
                     "options": {
-                        "tom_cruise": "Tom Cruise",
-                        "liz_hurley": "Liz Hurley"
+                        "cafe": "Cafe",
+                        "parking": "Parking",
+                        "picnic": "Picnic",
+                        "restaurant": "Restaurant"
+                        "toilets": "Toilets"
                     }
                 },
                 {
-                    "label": "Icons",
-                    "type": "radio",
-                    "name": "iconsradio",
-                    "options": {
-                        "hindi": "Hindi",
-                        "english": "English"
-                    }
-                },
-                {
-                    "name": "Opening Hours",
-                    "label": "hours",
+                    "name": "hours",
+                    "label": "Opening Hours",
                     "type": "inputbox"
                 }
             ]
