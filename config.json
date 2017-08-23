@@ -35,11 +35,11 @@
                     "type": "checkbox",
                     "name": "categories",
                     "options": {
-                        "Performing Arts": "Performing Arts",
-                        "Visual Arts": "Visual Arts",
-                        "Art Gallery": "Art Gallery",
-                        "Show": "Show",
-                        "Other": "Other"
+                        "performing-arts": "Performing Arts",
+                        "visual-arts": "Visual Arts",
+                        "art-gallery": "Art Gallery",
+                        "show": "Show",
+                        "other": "Other"
                     }
                 }
             ]
