@@ -29,7 +29,19 @@
                     "name": "hours",
                     "label": "Opening Hours",
                     "type": "inputbox"
-                }
+                },
+                {
+                    "label": "Categories",
+                    "type": "checkbox",
+                    "name": "categories",
+                    "options": {
+                        "Performing Arts": "Performing Arts",
+                        "Visual Arts": "Visual Arts",
+                        "Art Gallery": "Art Gallery",
+                        "Show": "Show",
+                        "Other": "Other"
+                    }
+                },
             ]
         }
     }
