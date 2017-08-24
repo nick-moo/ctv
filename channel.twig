@@ -43,9 +43,26 @@
             </div>
         </article>
     </div>
-    
+    <div class="col-full">
+        <div class="filter">
+            <div class="card__content">
+                <div class="sel sel--black-panther">
+                    <h2>Filter by experience</h2>
+                    <select id="myInput" onChange="myFunction()" name='firstLevelParts' id='select1'>
+                     <option value = 'showall'></option>
+                     <option value = 'performing-arts'>Performing Arts</option>
+                     <option value = 'visual-arts'>Visual Arts</option>
+                     <option value = 'art-gallery'>Art Gallery</option>
+                     <option value = 'show'>Show</option>
+                     <option value = 'other'>Other</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
     {% for i in 0..blog|length %}
-       {{this.render('partials/_single-blog.twig', {blog: blog[i], 'position': i, containerClass: 'col-half'}) | raw}}
+        {% set classes = blog[i].additionalInfo.categories|replace({"," : " "})  %}
+        {{this.render('partials/_single-blog.twig', {blog: blog[i], 'position': i, containerClass: 'col-half ' ~ classes}) | raw}}
     {% endfor %}
     
     {% set noDataCls = 'hide' %}
