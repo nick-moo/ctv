@@ -44,7 +44,7 @@
                 },
                 {
                     "label": "Region",
-                    "type": "checkbox",
+                    "type": "radio",
                     "name": "region",
                     "options": {
                         "melbourne": "Melbourne",
