@@ -41,6 +41,23 @@
                         "show": "Show",
                         "other": "Other"
                     }
+                },
+                {
+                    "label": "Region",
+                    "type": "checkbox",
+                    "name": "categories",
+                    "options": {
+                        "melbourne": "Melbourne",
+                        "mornington": "Mornington Peninsula",
+                        "geelong": "Geelong & the Bellarine",
+                        "gippsland": "Gippsland",
+                        "goulburn": "Goulburn River Valley"
+                        "bendigo": "Bendigo Region"
+                        "high-country": "Victoria's High Country"
+                        "ballarat": "Ballarat"
+                        "grampians": "The Grampians"
+                        "murray": "The Murray"
+                    }
                 }
             ]
         }
