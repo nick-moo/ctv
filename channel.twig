@@ -1,15 +1,15 @@
 {{ set(this, 'title', _Blog.getBlogTitle()) }}
-{% set blogInfo = _Blog.getBlog() %}
+{% set blogInfo=_Blog.getBlog() %}
 {{this.registerJs("HomeController.listing();")}}
 {{this.registerJs("HomeController.blog();")}}
 
-{% set network = _Network.getNetworkData() %}
-{% set limit = 10 %}
-{% set articlesArr = _Blog.getBlogFeed({'limit': limit, 'offset': 0}) %}
-{% set articles = articlesArr.articles %}
+{% set network=_Network.getNetworkData() %}
+{% set limit=10 %}
+{% set articlesArr=_Blog.getBlogFeed({'limit': limit, 'offset': 0}) %}
+{% set articles=articlesArr.articles %}
 
-{% set blog = _Blog.getAll({'keyword':blogInfo.title}) %}
-
+{% set blog=_Blog.getAll({'keyword':blogInfo.title}) %}
+{{dump(blogInfo)}}
 <div class="channel ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
     <div class="col-full">
         <article class="card--channel">
@@ -22,7 +22,7 @@
                             <div class="card__button-wrap">
                                 {% if not _Network.isNetworkClosed(network) %}
                                     {% if not _User.isGuest %}
-                                        {% set isUserFollowingBlog = _User.isUserFollowing('blog', blogInfo.id) %}
+                                        {% set isUserFollowingBlog=_User.isUserFollowing('blog', blogInfo.id) %}
                                         {% if isUserFollowingBlog %}
                                             <button class="button button__follow button__follow followSection" data-status="unfollow"  data-guid="{{blogInfo.guid}}">Following</button>
                                         {% else %}
@@ -45,29 +45,41 @@
     </div>
     <div class="col-full">
         <div class="filter">
-            <div class="card__content">
-                <div class="sel sel--black-panther">
-                    <h2>Filter by experience</h2>
-                    <select id="myInput" onChange="myFunction()" name='firstLevelParts' id='select1'>
-                     <option value = 'showall'></option>
-                     <option value = 'performing-arts'>Performing Arts</option>
-                     <option value = 'visual-arts'>Visual Arts</option>
-                     <option value = 'art-gallery'>Art Gallery</option>
-                     <option value = 'show'>Show</option>
-                     <option value = 'other'>Other</option>
-                    </select>
+            <div class="filterbg">
+                 <div class="horizontal-filter">
+                        <h3>Filter by Experience:</h3>
+                      <ul id="horizontal-menu">
+                        <li><a data-select='performing-arts' class="download"  href"#">Performing Arts</a></li>
+                        <li><a data-select='visual-arts' class="download" href"#">Visual Arts</a></li>
+                        <li><a data-select='art-gallery' class="download" href"#">Art Gallery</a></li>
+                        <li><a data-select='show' class="download" href"#">Show</a></li>
+                        <li><a data-select='other' class="download" href"#">Other</a></li>
+                        <li><a data-select='showall' class="download" href"#">Show All</a></li>
+                      </ul>
                 </div>
+                 <div class="dropdown">
+                      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by Experience
+                      <span class="caret"></span></button>
+                      <ul id="filtermenu" class="dropdown-menu">
+                        <li><a data-select='performing-arts' class="download"  href"#">Performing Arts</a></li>
+                        <li><a data-select='visual-arts' class="download" href"#">Visual Arts</a></li>
+                        <li><a data-select='art-gallery' class="download" href"#">Art Gallery</a></li>
+                        <li><a data-select='show' class="download" href"#">Show</a></li>
+                        <li><a data-select='other' class="download" href"#">Other</a></li>
+                        <li><a data-select='showall' class="download" href"#">Show All</a></li>
+                      </ul>
+                </div> 
             </div>
         </div>
     </div>
     {% for i in 0..blog|length %}
-        {% set classes = blog[i].additionalInfo.categories|replace({"," : " "})  %}
-        {{this.render('partials/_single-blog.twig', {blog: blog[i], 'position': i, containerClass: 'col-half ' ~ classes}) | raw}}
+        {% set classes=blog[i].additionalInfo.categories|replace({"," : " "})  %}
+        {{this.render('partials/_single-blog.twig', {blog: blog[i], 'position': i, containerClass: 'col-third ' ~ classes}) | raw}}
     {% endfor %}
     
-    {% set noDataCls = 'hide' %}
+    {% set noDataCls='hide' %}
     {% if articles|length == 0 %}
-        {% set noDataCls = '' %}
+        {% set noDataCls='' %}
     {% endif %}
     <div class="col-full text-center has-margin-bottom-40 {{noDataCls}} NoArticlesMsg">
         <p class="no-data text-center">No articles found.</p>  
@@ -76,6 +88,6 @@
 <br/>
 <div class="text-center has-margin-bottom-40">
     {% if articles|length >= limit %}
-        <a href="javascript:void(0)" class="button loadMoreArticles button__profile-follow"><i class="fa fa-arrow-down"></i>Load More</a>
+        <a class="download" href="javascript:void(0)" class="button loadMoreArticles button__profile-follow"><i class="fa fa-arrow-down"></i>Load More</a>
     {% endif %}
 </div>
