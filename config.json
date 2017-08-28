@@ -45,7 +45,7 @@
                 {
                     "label": "Region",
                     "type": "checkbox",
-                    "name": "categories",
+                    "name": "region",
                     "options": {
                         "melbourne": "Melbourne",
                         "mornington": "Mornington Peninsula",
