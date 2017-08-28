@@ -9,7 +9,6 @@
 {% set articles=articlesArr.articles %}
 
 {% set blog=_Blog.getAll({'keyword':blogInfo.title}) %}
-{{dump(blogInfo)}}
 <div class="channel ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
     <div class="col-full">
         <article class="card--channel">
