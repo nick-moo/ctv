@@ -10,6 +10,7 @@ module.exports = function(grunt) {
                 files: {
                     'static/deploy/theme.min.js': [
                         'static/js/index.js',
+                        'static/js/filter.js',
                         'static/plugins/jquery-ui/jquery-ui-1.10.1.custom.min.js',
                         'static/plugins/jquery.validate/jquery.validate.min.js',
                         'static/plugins/bootstrap-modal.js',
