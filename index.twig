@@ -7,6 +7,14 @@
 
 <div class="home ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
 
+    <div class="card__overlay homebanner" style="background-image: url('/themes/ctv/static/images/newctvbannersml.jpg'); height:470px;">
+        <div class="card__content_wrap">
+            <div class="card__content">
+                <div class="overlaylogo"><img src="/themes/ctv/static/images/ctvlogobanner.png"></div>
+            </div>
+        </div>
+    </div>
+
     {% if articles[0] is defined %}
         {{this.render('partials/_single-article.twig', {article: articles[0], 'position': 1, containerClass: 'col-full'}) | raw}}
     {% endif %}
@@ -52,6 +60,80 @@
     {% if articles|length >= limit %}
         <a href="javascript:void(0)" class="button loadMoreArticles button__profile-follow"><i class="fa fa-arrow-down"></i>Load More</a>
     {% endif %}
+</div>
+
+<div class="background-dark">
+    <div class="container container-dark">
+        <div class="flipbook-inner flipbook-border-top">
+            <div class="row">
+                <div class="card__content">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                    <h2>Download 2017/18 Guide</h2> 
+                    <a href="http://www.culturaltourismvictoria.com.au/experience-culture-victoria/" class="btn btn-flipbook">Download</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="related related_partners">
+        <div class="related-inner">
+
+            <div class="abovelogotext">
+                <h5 align="center">
+            To learn more about Victoria's creative and cultural experiences visit:</h5>
+            </div>
+
+            <div class="items-per-row-5">
+                <div class="partners-row">
+
+                    <div class="partners-container">
+                        <div class="partner-featured-image">
+                            <a href="http://www.visitvictoria.com/" target="_blank">
+                            <img width="101" height="42" src="/themes/ctv/static/images/visitvic.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                        </div>
+                    </div>
+
+                    <div class="partners-container">
+                        <div class="partner-featured-image">
+                            <a href="http://creative.vic.gov.au/" target="_blank">
+                            <img width="147" height="42" src="/themes/ctv/static/images/creativevic.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                        </div>
+                    </div>
+
+                    <div class="partners-container">
+                        <div class="partner-featured-image">
+                            <a href="http://www.cv.vic.gov.au/" target="_blank">
+                            <img width="126" height="42" src="/themes/ctv/static/images/culturevic.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                        </div>
+                    </div>
+
+                    <div class="partners-container">
+                        <div class="partner-featured-image">
+                            <a href="https://victoriancollections.net.au/" target="_blank">
+                            <img width="163" height="37" src="/themes/ctv/static/images/collectionsvic.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                        </div>
+                    </div>
+
+                    <div class="partners-container">
+                        <div class="partner-featured-image">
+                            <a href="http://www.rav.net.au/whats-on" target="_blank">
+                            <img width="163" height="42" src="/themes/ctv/static/images/regionalartsvic.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                        </div>
+                    </div>
+
+                    <div class="partners-container">
+                        <div class="partner-featured-image">
+                            <a href="http://www.nationaltrust.org.au/vic/" target="_blank">
+                            <img width="163" height="42" src="/themes/ctv/static/images/nationaltrust.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 
 {% set noDataCls = 'hide' %}
