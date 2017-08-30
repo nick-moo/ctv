@@ -1,3 +1,4 @@
+{% set networkData = _Network.getNetworkData() %}
 {{ set(this, 'title', _Blog.getBlogTitle()) }} 
 
 {{this.registerJs("HomeController.listing();")}}
@@ -7,13 +8,10 @@
 
 <div class="home ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
 
-    {% set newctvbannersml = network.templatePath~'/static/images/newctvbannersml.jpg'%}
-    {% set ctvlogobanner = network.templatePath~'/static/images/ctvlogobanner.jpg'%}
-
-    <div class="card__overlay homebanner" style="background-image: url('{{newctvbannersml}}'); height:470px;">
+    <div class="card__overlay homebanner" style="background-image: url('{{networkData.templatePath}}/static/images/newctvbannersml.jpg'); height:470px;">
         <div class="card__content_wrap">
             <div class="card__content">
-                <div class="overlaylogo"><img src="{{ctvlogobanner}}"></div>
+                <div class="overlaylogo"><img src="{{networkData.templatePath}}/static/images/ctvlogobanner.jpg"></div>
             </div>
         </div>
     </div>
@@ -91,52 +89,45 @@
             <div class="items-per-row-5">
                 <div class="partners-row">
 
-                    {% set visitvic = network.templatePath~'/static/images/visitvic.png'%}
-                    {% set creativevic = network.templatePath~'/static/images/creativevic.jpg'%}
-                    {% set culturevic = network.templatePath~'/static/images/culturevic.jpg'%}
-                    {% set collectionsvic = network.templatePath~'/static/images/collectionsvic.jpg'%}
-                    {% set regionalartsvic = network.templatePath~'/static/images/regionalartsvic.jpg'%}
-                    {% set nationaltrust = network.templatePath~'/static/images/nationaltrust.jpg'%}
-
                     <div class="partners-container">
                         <div class="partner-featured-image">
                             <a href="http://www.visitvictoria.com/" target="_blank">
-                            <img width="101" height="42" src="{{visitvic}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                            <img width="101" height="42" src="{{networkData.templatePath}}/static/images/visitvic.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
                         </div>
                     </div>
 
                     <div class="partners-container">
                         <div class="partner-featured-image">
                             <a href="http://creative.vic.gov.au/" target="_blank">
-                            <img width="147" height="42" src="{{creativevic}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                            <img width="147" height="42" src="{{networkData.templatePath}}/static/images/creativevic.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
                         </div>
                     </div>
 
                     <div class="partners-container">
                         <div class="partner-featured-image">
                             <a href="http://www.cv.vic.gov.au/" target="_blank">
-                            <img width="126" height="42" src="{{culturevic}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                            <img width="126" height="42" src="{{networkData.templatePath}}/static/images/culturevic.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
                         </div>
                     </div>
 
                     <div class="partners-container">
                         <div class="partner-featured-image">
                             <a href="https://victoriancollections.net.au/" target="_blank">
-                            <img width="163" height="37" src="{{collectionsvic}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                            <img width="163" height="37" src="{{networkData.templatePath}}/static/images/collectionsvic.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
                         </div>
                     </div>
 
                     <div class="partners-container">
                         <div class="partner-featured-image">
                             <a href="http://www.rav.net.au/whats-on" target="_blank">
-                            <img width="163" height="42" src="{{regionalartsvic}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                            <img width="163" height="42" src="{{networkData.templatePath}}/static/images/regionalartsvic.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
                         </div>
                     </div>
 
                     <div class="partners-container">
                         <div class="partner-featured-image">
                             <a href="http://www.nationaltrust.org.au/vic/" target="_blank">
-                            <img width="163" height="42" src="{{nationaltrust}}" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
+                            <img width="163" height="42" src="{{networkData.templatePath}}/static/images/nationaltrust.jpg" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"></a>
                         </div>
                     </div>
                 </div>
