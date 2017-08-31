@@ -20,6 +20,8 @@
     {% set hasBlogThumbImage = TRUE %}
 {% endif %}
 
+{{dump(blogInfo)}}
+
 {{this.registerJs("HomeController.listing();")}}
 {{this.registerJs("HomeController.blog();")}}
 {% set blogOwnerImage = _Media.getMediaUrl(blogInfo.owner['media'], 180, 180, {crop:"thumb", radius:"max", gravity:"face", type: "user"}) %}
@@ -60,17 +62,26 @@
         </div>
     </div>
 
-    <div class="article">
+    <div class="article sidebar">
         <div class="article__container">
-                <h1 class="blog__title">{{blogInfo.title | raw}}</h1>
-                <p>{{blogInfo.shortDescription | raw}}</p>
-                <p><strong>Email:</strong> {{blogInfo.settings.contact.email | raw}}</p>
-                <p>Phone: {{blogInfo.settings.contact.phone | raw}}</p>
-                <p>Address: {{blogInfo.settings.contact.address | raw}}</p>
-                <p>City: {{blogInfo.settings.contact.city | raw}}</p>
-                <p>Postcode: {{blogInfo.settings.contact.postcode | raw}}</p>
+            <h1 class="blog__title">{{blogInfo.title | raw}}</h1>
+            <div class="row">
+                <div class="col col-md-8">
+                    <p>{{blogInfo.shortDescription | raw}}</p>
+                </div>
+                <div class="col-6 col-md-4">
+                    <h6>Email</h6><p><a href="mailto:{{blogInfo.settings.contact.email | raw}}">{{blogInfo.settings.contact.email | raw}} </a></p>
+                    <h6>Phone</h6><p><a href="tel:{{blogInfo.settings.contact.phone | raw}}">{{blogInfo.settings.contact.phone | raw}}</a></p>
+                    <h6>Address</h6><p> {{blogInfo.settings.contact.address | raw}}</p>
+                    <h6>City</h6><p> {{blogInfo.settings.contact.city | raw}}</p>
+                    <h6>Postcode</h6><p> {{blogInfo.settings.contact.postcode | raw}}</p>
+                </div>
+            </div>
         </div>
     </div>
+
+
+
 
     <div class="card-container ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
         {% if articles[0] is defined %}

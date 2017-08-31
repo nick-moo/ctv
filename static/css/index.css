@@ -14221,12 +14221,13 @@ li.slick-active button {
     line-height: 1.21;
     letter-spacing: -.014em;
     color: #4a4a4a;
-    margin-bottom: 30px
+    margin-bottom: 0px;
+    text-transform: uppercase;
 }
 
 @media (min-width:768px) {
     .article h6 {
-        font-size: 18px
+        font-size: 15px
     }
 }
 
@@ -17457,6 +17458,10 @@ html.ie .tooltip {
 
 @media (max-width: 1001px) {
     .filter .horizontal-filter {display:none;}
+}
+
+.sidebar .article p {
+    margin-bottom: 20px;
 }
 
 
