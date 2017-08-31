@@ -7,7 +7,7 @@
 {% set limit=10 %}
 {% set articlesArr=_Blog.getBlogFeed({'limit': limit, 'offset': 0}) %}
 {% set articles=articlesArr.articles %}
-{% set blog=_Blog.getAll({'metaInfo': {'region' : 'bendigo'}}) %}
+{% set blog=_Blog.getAll({'type': 'blog'}) %}
 
 <div class="channel ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
     <div class="col-full">
@@ -45,18 +45,18 @@
     <div class="col-full">
         <div class="filter">
             <div class="filterbg">
-                 <div class="horizontal-filter">
+                <div class="horizontal-filter">
                         <h3>Filter by Experience:</h3>
-                      <ul id="horizontal-menu">
-                        <li><a data-select='performing-arts' class="download"  href"#">Performing Arts</a></li>
-                        <li><a data-select='visual-arts' class="download" href"#">Visual Arts</a></li>
-                        <li><a data-select='art-gallery' class="download" href"#">Art Gallery</a></li>
-                        <li><a data-select='show' class="download" href"#">Show</a></li>
-                        <li><a data-select='other' class="download" href"#">Other</a></li>
-                        <li><a data-select='showall' class="download" href"#">Show All</a></li>
-                      </ul>
+                          <ul id="horizontal-menu">
+                            <li><a data-select='performing-arts' class="download"  href"#">Performing Arts</a></li>
+                            <li><a data-select='visual-arts' class="download" href"#">Visual Arts</a></li>
+                            <li><a data-select='art-gallery' class="download" href"#">Art Gallery</a></li>
+                            <li><a data-select='show' class="download" href"#">Show</a></li>
+                            <li><a data-select='other' class="download" href"#">Other</a></li>
+                            <li><a data-select='showall' class="download" href"#">Show All</a></li>
+                          </ul>
                 </div>
-                 <div class="dropdown">
+                <div class="dropdown">
                       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Filter by Experience
                       <span class="caret"></span></button>
                       <ul id="filtermenu" class="dropdown-menu">
