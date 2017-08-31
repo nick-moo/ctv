@@ -20,8 +20,6 @@
     {% set hasBlogThumbImage = TRUE %}
 {% endif %}
 
-{{dump(blogInfo)}}
-
 {{this.registerJs("HomeController.listing();")}}
 {{this.registerJs("HomeController.blog();")}}
 {% set blogOwnerImage = _Media.getMediaUrl(blogInfo.owner['media'], 180, 180, {crop:"thumb", radius:"max", gravity:"face", type: "user"}) %}
