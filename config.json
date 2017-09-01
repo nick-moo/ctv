@@ -52,11 +52,12 @@
                         "geelong": "Geelong & the Bellarine",
                         "gippsland": "Gippsland",
                         "goulburn": "Goulburn River Valley",
-                        "bendigo": "Bendigo Region TTTESSSST",
+                        "bendigo": "Bendigo Region",
                         "high-country": "Victoria's High Country",
                         "ballarat": "Ballarat",
                         "grampians": "The Grampians",
-                        "murray": "The Murray"
+                        "murray": "The Murray",
+                        "mufdsay": "The Mufdsa"
                     }
                 }
             ]
