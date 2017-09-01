@@ -7,7 +7,7 @@
 {% set limit=10 %}
 {% set articlesArr=_Blog.getBlogFeed({'limit': limit, 'offset': 0}) %}
 {% set articles=articlesArr.articles %}
-{% set blog=_Blog.getAll({'type': 'blog'}) %}
+{% set blog=_Blog.getAll({'type':'blog', 'metaInfo': {blogInfo.additionalInfo.region : 'region'}}) %}
 
 <div class="channel ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
     <div class="col-full">
