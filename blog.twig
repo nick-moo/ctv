@@ -75,16 +75,13 @@
                     <h6>Postcode</h6><p> {{blogInfo.settings.contact.postcode | raw}}</p>
                         {% set featArray = blogInfo.additionalInfo.features|split(',') %}
                         {% for i in 0..featArray|length %}
-                            <h6>{{blogInfo.additionalInfo.features[i] | raw}}</h6>
+                            <img src="{{networkData.templatePath}}/static/images/newicons{{featArray[i] | raw}}.svg">
                         {% endfor %}
                     <p>{{blogInfo.additionalInfo.features[0]}}</p>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     <div class="card-container ajaxArticles" data-existing-nonpinned-count="{{articlesArr.existingNonPinnedCount}}" data-offset="{{limit}}">
         {% if articles[0] is defined %}

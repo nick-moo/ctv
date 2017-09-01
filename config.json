@@ -18,11 +18,11 @@
                     "type": "checkbox",
                     "name": "features",
                     "options": {
-                        "cafe": "Cafe",
-                        "parking": "Parking",
-                        "picnic": "Picnic",
-                        "restaurant": "Restaurant",
-                        "toilets": "Toilets"
+                        "Cafe": "Cafe",
+                        "Parking": "Parking",
+                        "Picnic": "Picnic",
+                        "Restaurant": "Restaurant",
+                        "Toilets": "Toilets"
                     }
                 },
                 {
