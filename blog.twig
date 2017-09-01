@@ -73,6 +73,7 @@
                     <h6>Address</h6><p> {{blogInfo.settings.contact.address | raw}}</p>
                     <h6>City</h6><p> {{blogInfo.settings.contact.city | raw}}</p>
                     <h6>Postcode</h6><p> {{blogInfo.settings.contact.postcode | raw}}</p>
+                    <h6>Features</h6>
                         {% set featArray = blogInfo.additionalInfo.features|split(',') %}
                         {% for i in 0..featArray|length - 1 %}
                             <img src="{{networkData.templatePath}}/static/images/newicons/{{featArray[i] | raw}}.svg">
