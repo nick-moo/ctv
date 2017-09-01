@@ -73,7 +73,8 @@
                     <h6>Address</h6><p> {{blogInfo.settings.contact.address | raw}}</p>
                     <h6>City</h6><p> {{blogInfo.settings.contact.city | raw}}</p>
                     <h6>Postcode</h6><p> {{blogInfo.settings.contact.postcode | raw}}</p>
-                        {% for i in 0..blogInfo.additionalInfo.features|length %}
+                        {% set featArray = blogInfo.additionalInfo.features|split(',') %}
+                        {% for i in 0..featArray|length %}
                             <h6>{{blogInfo.additionalInfo.features[i] | raw}}</h6>
                         {% endfor %}
                     <p>{{blogInfo.additionalInfo.features[0]}}</p>
