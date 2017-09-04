@@ -35,11 +35,68 @@
                     "type": "checkbox",
                     "name": "categories",
                     "options": {
-                        "performing-arts": "Performing Arts",
-                        "visual-arts": "Visual Arts",
-                        "art-gallery": "Art Gallery",
-                        "show": "Show",
-                        "other": "Other"
+                            "Galleries & Museums": {
+                                "national":"National",
+                                "regional":"Regional",
+                                "private":"Private",
+                                "commercial":"Commercial",
+                                "community":"Community",
+                                "aboriginal":"Aboriginal",
+                                "contemporary":"Contemporary",
+                                "history":"History",
+                                "military":"Military",
+                                "nature":"Nature",
+                                "arts":"Arts",
+                                "crafts":"Crafts",
+                                "photography":"Photography"
+                            },
+                             
+                            "Visual Arts" :{
+                                "digital":"Digital",
+                                "photography":"Photography",
+                                "painting":"Painting",
+                                "drawing":"Drawing",
+                                "mix-media":"Mix Media",
+                                "sculpture":"Sculpture",
+                                "street":"Street"
+                            },
+                             
+                            "Performing Arts" :{
+                                "music":"Music",
+                                "theatre":"Theatre",
+                                "dance":"Dance",
+                                "studio":"Studio",
+                                "puppetry":"Puppetry",
+                                "venue":"Venue",
+                                "event":"Event",
+                                "opera":"Opera",
+                                "orchestra":"Orchestra",
+                                "contemporary":"Contemporary"
+                            },
+                             
+                            "Parks" :{
+                                "gardens":"Gardens"
+                            },
+                             
+                            "Historic Buildings" :{
+                                "sites":"Sites"
+                            },
+                             
+                            "events":"Events",
+                             
+                            "Public Art" :{
+                                "street Art":"Street Art",
+                                "sculpture":"Sculpture"
+                            },
+                             
+                            "tours":"Tours",
+                             
+                            "Literature" :{
+                                "libraries":"Libraries",
+                                "shops":"Shops",
+                                "fairs":"Fairs",
+                                "museums":"Museums"
+                            }
                     }
                 },
                 {
