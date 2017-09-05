@@ -35,68 +35,16 @@
                     "type": "checkbox",
                     "name": "categories",
                     "options": {
-                            "Galleries & Museums": {
-                                "national":"National",
-                                "regional":"Regional",
-                                "private":"Private",
-                                "commercial":"Commercial",
-                                "community":"Community",
-                                "aboriginal":"Aboriginal",
-                                "contemporary":"Contemporary",
-                                "history":"History",
-                                "military":"Military",
-                                "nature":"Nature",
-                                "arts":"Arts",
-                                "crafts":"Crafts",
-                                "photography":"Photography"
-                            },
-                             
-                            "Visual Arts" :{
-                                "digital":"Digital",
-                                "photography":"Photography",
-                                "painting":"Painting",
-                                "drawing":"Drawing",
-                                "mix-media":"Mix Media",
-                                "sculpture":"Sculpture",
-                                "street":"Street"
-                            },
-                             
-                            "Performing Arts" :{
-                                "music":"Music",
-                                "theatre":"Theatre",
-                                "dance":"Dance",
-                                "studio":"Studio",
-                                "puppetry":"Puppetry",
-                                "venue":"Venue",
-                                "event":"Event",
-                                "opera":"Opera",
-                                "orchestra":"Orchestra",
-                                "contemporary":"Contemporary"
-                            },
-                             
-                            "Parks" :{
-                                "gardens":"Gardens"
-                            },
-                             
-                            "Historic Buildings" :{
-                                "sites":"Sites"
-                            },
-                             
+                            "galleries-museums":"Galleries & Museums",
+                            "visual-arts":"Visual Arts",
+                            "performing-arts":"Performing Arts",
+                            "parks":"Parks",
+                            "historic-buildings":"Historic Buildings",
                             "events":"Events",
-                             
-                            "Public Art" :{
-                                "street Art":"Street Art",
-                                "sculpture":"Sculpture"
-                            },
-                             
+                            "public-art":"Public Art",
                             "tours":"Tours",
-                             
-                            "Literature" :{
-                                "libraries":"Libraries",
-                                "shops":"Shops",
-                                "fairs":"Fairs",
-                                "museums":"Museums"
-                            }
+                            "literature":"Literature"
+
                     }
                 },
                 {
